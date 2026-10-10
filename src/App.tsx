@@ -1,5 +1,6 @@
 ﻿import { useEffect, useMemo, useState } from "react";
 
+import ArtBackground from "./components/ArtBackground";
 import Header from "./components/Header";
 import Filtros from "./components/Filtros";
 import Modal from "./components/Modal";
@@ -94,6 +95,8 @@ function App() {
 
   return (
     <>
+      <ArtBackground />
+
       <main className="app-container">
         <Header onNuevo={nuevoTaller} />
 

@@ -246,3 +246,135 @@ button {
     grid-column: 1 / -1;
   }
 }
+
+body {
+  background:
+    radial-gradient(circle at top left, #f7f9fc 0%, #f5f6f8 45%, #eef2f7 100%);
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.art-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.art-bg-icon {
+  position: absolute;
+  color: #8ea0bf;
+  opacity: 0.12;
+  filter: blur(0.2px);
+}
+
+.art-bg-icon.one {
+  top: 40px;
+  left: 40px;
+  transform: rotate(-12deg);
+}
+
+.art-bg-icon.two {
+  top: 90px;
+  right: 80px;
+  transform: rotate(10deg);
+}
+
+.art-bg-icon.three {
+  top: 280px;
+  left: 10%;
+  transform: rotate(-8deg);
+}
+
+.art-bg-icon.four {
+  top: 240px;
+  right: 16%;
+  transform: rotate(15deg);
+}
+
+.art-bg-icon.five {
+  bottom: 140px;
+  left: 8%;
+  transform: rotate(-10deg);
+}
+
+.art-bg-icon.six {
+  bottom: 70px;
+  right: 10%;
+  transform: rotate(12deg);
+}
+
+.art-bg-icon.seven {
+  bottom: 260px;
+  left: 44%;
+  transform: rotate(-18deg);
+}
+
+.art-bg-icon.eight {
+  top: 120px;
+  left: 48%;
+  transform: rotate(14deg);
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+.header,
+.filters,
+.taller-card,
+.empty-state,
+.modal {
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 650px) {
+  .art-bg-icon {
+    opacity: 0.09;
+  }
+
+  .art-bg-icon.one {
+    top: 30px;
+    left: 10px;
+  }
+
+  .art-bg-icon.two {
+    top: 110px;
+    right: 20px;
+  }
+
+  .art-bg-icon.three {
+    top: 280px;
+    left: -10px;
+  }
+
+  .art-bg-icon.four {
+    top: 420px;
+    right: -10px;
+  }
+
+  .art-bg-icon.five {
+    bottom: 180px;
+    left: -8px;
+  }
+
+  .art-bg-icon.six {
+    bottom: 80px;
+    right: -8px;
+  }
+
+  .art-bg-icon.seven {
+    bottom: 320px;
+    left: 36%;
+  }
+
+  .art-bg-icon.eight {
+    top: 210px;
+    left: 55%;
+  }
+}
