@@ -1,0 +1,248 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #171717;
+  background: #f5f6f8;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 45px 0 80px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header span {
+  display: block;
+  margin-top: 5px;
+  color: #787878;
+  font-size: 14px;
+}
+
+.primary-button,
+.secondary-button {
+  border-radius: 10px;
+  border: 0;
+  min-height: 44px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: #171717;
+  color: white;
+}
+
+.secondary-button {
+  background: #eeeeee;
+  color: #333;
+}
+
+.search-box {
+  height: 48px;
+  width: 100%;
+  background: white;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+  color: #8a8a8a;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.result-count {
+  margin: 16px 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.taller-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 16px;
+}
+
+.taller-card {
+  background: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.school-label {
+  color: #737373;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.card-top h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-data {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-data div {
+  display: flex;
+  gap: 10px;
+  color: #505050;
+  font-size: 14px;
+}
+
+.empty-state {
+  background: white;
+  border: 1px dashed #ccc;
+  border-radius: 16px;
+  padding: 70px 20px;
+  text-align: center;
+  color: #888;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.modal {
+  width: min(580px, 100%);
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.taller-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 0 14px;
+  outline: none;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 650px) {
+  .app-container {
+    width: calc(100% - 28px);
+    padding-top: 25px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .taller-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taller-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    grid-column: 1 / -1;
+  }
+}
