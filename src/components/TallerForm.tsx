@@ -25,12 +25,14 @@ type Props = {
   taller?: Taller | null;
   onGuardar: (data: FormData) => void;
   onCancelar: () => void;
+  guardando?: boolean;
 };
 
 export default function TallerForm({
   taller,
   onGuardar,
   onCancelar,
+  guardando = false,
 }: Props) {
   const [form, setForm] = useState<FormData>(initialState);
 
@@ -60,6 +62,15 @@ export default function TallerForm({
     }));
   }
 
+  function enfocarCampo(e: React.FocusEvent<HTMLElement>) {
+    setTimeout(() => {
+      e.currentTarget.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 250);
+  }
+
   function submit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -85,6 +96,7 @@ export default function TallerForm({
           onChange={(e) =>
             cambiarCampo("escuela", e.target.value)
           }
+          onFocus={enfocarCampo}
           required
         >
           <option value="">Seleccionar escuela</option>
@@ -145,6 +157,7 @@ export default function TallerForm({
           onChange={(e) =>
             cambiarCampo("nombre", e.target.value)
           }
+          onFocus={enfocarCampo}
           placeholder="Nombre del taller"
           required
         />
@@ -156,6 +169,7 @@ export default function TallerForm({
           onChange={(e) =>
             cambiarCampo("horario", e.target.value)
           }
+          onFocus={enfocarCampo}
           placeholder="Horario"
           required
         />
@@ -165,10 +179,12 @@ export default function TallerForm({
         <input
           type="number"
           min="0"
+          inputMode="numeric"
           value={form.cupo || ""}
           onChange={(e) =>
             cambiarCampo("cupo", Number(e.target.value))
           }
+          onFocus={enfocarCampo}
           placeholder="Cupo"
         />
       </div>
@@ -179,6 +195,7 @@ export default function TallerForm({
           onChange={(e) =>
             cambiarCampo("docente", e.target.value)
           }
+          onFocus={enfocarCampo}
           placeholder="Docente"
           required
         />
@@ -190,18 +207,21 @@ export default function TallerForm({
           onChange={(e) =>
             cambiarCampo("lugar", e.target.value)
           }
+          onFocus={enfocarCampo}
           placeholder="Lugar"
           required
         />
       </div>
 
-      <div className="form-group full">
+      <div className="form-group full direccion-group">
         <input
           value={form.direccion}
           onChange={(e) =>
             cambiarCampo("direccion", e.target.value)
           }
+          onFocus={enfocarCampo}
           placeholder="Dirección"
+          autoComplete="street-address"
         />
       </div>
 
@@ -210,12 +230,17 @@ export default function TallerForm({
           type="button"
           className="secondary-button"
           onClick={onCancelar}
+          disabled={guardando}
         >
           Cancelar
         </button>
 
-        <button type="submit" className="primary-button">
-          Guardar
+        <button
+          type="submit"
+          className="primary-button"
+          disabled={guardando}
+        >
+          {guardando ? "Guardando..." : "Guardar"}
         </button>
       </div>
     </form>
