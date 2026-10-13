@@ -512,3 +512,12 @@ body {
     margin-top: 12px;
   }
 }
+
+.header .primary-button {
+  background: #178a45;
+  color: white;
+}
+
+.header .primary-button:hover {
+  background: #126f37;
+}
