@@ -502,3 +502,13 @@ body {
     text-align: center;
   }
 }
+
+@media (max-width: 650px) {
+  .form-actions {
+    position: static;
+    bottom: auto;
+    background: transparent;
+    padding: 8px 0 calc(14px + env(safe-area-inset-bottom));
+    margin-top: 12px;
+  }
+}
