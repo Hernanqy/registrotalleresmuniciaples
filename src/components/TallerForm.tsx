@@ -78,19 +78,73 @@ export default function TallerForm({
 
   return (
     <form className="taller-form" onSubmit={submit}>
+
       <div className="form-group full">
-        <input
+        <select
           value={form.escuela}
-          onChange={(e) => cambiarCampo("escuela", e.target.value)}
-          placeholder="Escuela"
+          onChange={(e) =>
+            cambiarCampo("escuela", e.target.value)
+          }
           required
-        />
+        >
+          <option value="">Seleccionar escuela</option>
+
+          <option value="Escuela Municipal de Ajedrez">
+            Escuela Municipal de Ajedrez
+          </option>
+
+          <option value="Escuela Municipal de Artes Plásticas Leopoldo Bocazzi">
+            Escuela Municipal de Artes Plásticas Leopoldo Bocazzi
+          </option>
+
+          <option value="Escuela Municipal de Cerámica Víctor Portarrieu">
+            Escuela Municipal de Cerámica Víctor Portarrieu
+          </option>
+
+          <option value="Taller de Historietas VEO">
+            Taller de Historietas VEO
+          </option>
+
+          <option value="Escuela Municipal de Artes Plásticas Sierras Bayas">
+            Escuela Municipal de Artes Plásticas Sierras Bayas
+          </option>
+
+          <option value="Escuela Municipal de Danzas">
+            Escuela Municipal de Danzas
+          </option>
+
+          <option value="Escuela Municipal de Cerámica Sierras Bayas">
+            Escuela Municipal de Cerámica Sierras Bayas
+          </option>
+
+          <option value="Escuela Municipal de Teatro">
+            Escuela Municipal de Teatro
+          </option>
+
+          <option value="Escuela Municipal de Música Hermanos Rossi">
+            Escuela Municipal de Música Hermanos Rossi
+          </option>
+
+          <option value="Escuela Literaria Municipal Alfonsina">
+            Escuela Literaria Municipal Alfonsina
+          </option>
+
+          <option value="Escuela Municipal de Orfebrería y Artesanías Tradicionales Armando Ferreira">
+            Escuela Municipal de Orfebrería y Artesanías Tradicionales Armando Ferreira
+          </option>
+
+          <option value="Escuela de Artística Integrada">
+            Escuela de Artística Integrada
+          </option>
+        </select>
       </div>
 
       <div className="form-group full">
         <input
           value={form.nombre}
-          onChange={(e) => cambiarCampo("nombre", e.target.value)}
+          onChange={(e) =>
+            cambiarCampo("nombre", e.target.value)
+          }
           placeholder="Nombre del taller"
           required
         />
@@ -99,7 +153,9 @@ export default function TallerForm({
       <div className="form-group">
         <input
           value={form.horario}
-          onChange={(e) => cambiarCampo("horario", e.target.value)}
+          onChange={(e) =>
+            cambiarCampo("horario", e.target.value)
+          }
           placeholder="Horario"
           required
         />
@@ -110,7 +166,9 @@ export default function TallerForm({
           type="number"
           min="0"
           value={form.cupo || ""}
-          onChange={(e) => cambiarCampo("cupo", Number(e.target.value))}
+          onChange={(e) =>
+            cambiarCampo("cupo", Number(e.target.value))
+          }
           placeholder="Cupo"
         />
       </div>
@@ -118,7 +176,9 @@ export default function TallerForm({
       <div className="form-group full">
         <input
           value={form.docente}
-          onChange={(e) => cambiarCampo("docente", e.target.value)}
+          onChange={(e) =>
+            cambiarCampo("docente", e.target.value)
+          }
           placeholder="Docente"
           required
         />
@@ -127,7 +187,9 @@ export default function TallerForm({
       <div className="form-group full">
         <input
           value={form.lugar}
-          onChange={(e) => cambiarCampo("lugar", e.target.value)}
+          onChange={(e) =>
+            cambiarCampo("lugar", e.target.value)
+          }
           placeholder="Lugar"
           required
         />
@@ -136,7 +198,9 @@ export default function TallerForm({
       <div className="form-group full">
         <input
           value={form.direccion}
-          onChange={(e) => cambiarCampo("direccion", e.target.value)}
+          onChange={(e) =>
+            cambiarCampo("direccion", e.target.value)
+          }
           placeholder="Dirección"
         />
       </div>
